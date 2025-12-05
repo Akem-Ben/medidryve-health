@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+🚀 React + Vite + TypeScript App
 
-## Project info
+A modern React application built with Vite, TypeScript, React Router, TanStack Query, Tailwind CSS, and shadcn/ui.
+This project includes full authentication flows, a dashboard, settings, cart system, and more.
 
-**URL**: https://lovable.dev/projects/fdd5c778-a518-4ea4-8112-74d6f0af79b2
+📌 Features
+🔐 Authentication
 
-## How can I edit this code?
+Phone number login & OTP (SMS) flow
 
-There are several ways of editing your application.
+Register & Login pages
 
-**Use Lovable**
+Auth screen routing
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fdd5c778-a518-4ea4-8112-74d6f0af79b2) and start prompting.
+🧭 Navigation / Screens
 
-Changes made via Lovable will be committed automatically to this repo.
+Splash
 
-**Use your preferred IDE**
+Auth → Phone / OTP / Register / Login
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Dashboard
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Orders
 
-Follow these steps:
+Account
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Cart
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Settings
 
-# Step 3: Install the necessary dependencies.
-npm i
+404 Not Found
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+⚛️ Tech Stack
+
+React 18 + TypeScript
+
+Vite (super-fast dev + build)
+
+React Router v6
+
+@tanstack/react-query (API caching + server state)
+
+Tailwind CSS
+
+shadcn/ui & Radix UI components
+
+Sonner & custom toaster notifications
+
+Context API for global state (AppContext)
+
+📂 Project Structure (Important Files)
+src/
+ ├── components/ui/...      # UI components (shadcn, sonner, toaster)
+ ├── contexts/AppContext.tsx
+ ├── screens/
+ │    ├── SplashScreen.tsx
+ │    ├── auth/
+ │    │    ├── PhoneInputScreen.tsx
+ │    │    ├── OTPScreen.tsx
+ │    │    ├── RegisterScreen.tsx
+ │    │    └── LoginScreen.tsx
+ │    ├── DashboardScreen.tsx
+ │    ├── OrdersScreen.tsx
+ │    ├── SettingsScreen.tsx
+ │    └── CartScreen.tsx
+ ├── pages/NotFound.tsx
+ └── App.tsx
+
+▶️ Running the Project Locally
+1. Install dependencies
+npm install
+
+2. Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+3. Build for production
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+4. Preview production build
+npm run preview
 
-**Use GitHub Codespaces**
+🌐 App Routing Overview
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Your App.tsx defines the following routes:
 
-## What technologies are used for this project?
+Route	Screen
+/	SplashScreen
+/auth/phone	PhoneInputScreen
+/auth/otp	OTPScreen
+/auth/register	RegisterScreen
+/auth/login	LoginScreen
+/dashboard	DashboardScreen
+/orders	OrdersScreen
+/account	AccountScreen
+/settings	SettingsScreen
+/cart	CartScreen
+*	NotFound
+🧰 Development Tools
 
-This project is built with:
+Type checking with TypeScript
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Linting with ESLint
 
-## How can I deploy this project?
+Styling with Tailwind + shadcn/ui
 
-Simply open [Lovable](https://lovable.dev/projects/fdd5c778-a518-4ea4-8112-74d6f0af79b2) and click on Share -> Publish.
+State + server cache with React Query
 
-## Can I connect a custom domain to my Lovable project?
+📦 Production Deployment
 
-Yes, you can!
+You can deploy this app to:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Vercel
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Netlify
+
+Cloudflare Pages
+
+GitHub Pages
+
+Typical Vercel deployment:
+
+npm run build
+
+
+Then push to GitHub → import into Vercel → done.
+
+🤝 Contributing
+
+Feel free to fork, open issues, or submit PRs.
+This repo uses standard Node.js/Vite project conventions.
