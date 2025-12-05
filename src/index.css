@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 239 44% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 239 44% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 239 44% 20%;
+
+    --primary: 239 44% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 239 44% 95%;
+
+    --secondary: 168 76% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 168 76% 95%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 168 50% 90%;
+    --accent-foreground: 168 76% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 44% 38%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(239, 44%, 38%) 0%, hsl(270, 50%, 50%) 50%, hsl(168, 76%, 42%) 100%);
+    --gradient-splash: linear-gradient(180deg, hsl(239, 44%, 30%) 0%, hsl(239, 44%, 45%) 50%, hsl(270, 50%, 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-mint: linear-gradient(135deg, hsl(168, 76%, 90%) 0%, hsl(168, 60%, 95%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(239 44% 38% / 0.08);
+    --shadow-md: 0 4px 16px -4px hsl(239 44% 38% / 0.12);
+    --shadow-lg: 0 8px 32px -8px hsl(239 44% 38% / 0.16);
+    --shadow-glow: 0 0 40px hsl(239 44% 38% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(239 44% 38% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 239 44% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 239 40% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 239 40% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 239 44% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 239 44% 20%;
+
+    --secondary: 168 76% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 239 30% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 168 50% 20%;
+    --accent-foreground: 168 76% 80%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 239 30% 20%;
+    --input: 239 30% 20%;
+    --ring: 239 44% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .mobile-container {
+    @apply mx-auto max-w-md min-h-screen relative overflow-hidden;
+  }
+
+  .screen-padding {
+    @apply px-5 py-6;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-2xl shadow-card;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold py-4 px-6 rounded-xl 
+           transition-all duration-300 active:scale-[0.98] hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground font-semibold py-4 px-6 rounded-xl 
+           transition-all duration-300 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-semibold py-4 px-6 rounded-xl 
+           transition-all duration-300 active:scale-[0.98] hover:bg-primary-light;
+  }
+
+  .input-field {
+    @apply w-full bg-muted border-0 rounded-xl px-4 py-4 text-foreground 
+           placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/20 
+           focus:outline-none transition-all duration-200;
+  }
+
+  .otp-box {
+    @apply w-12 h-14 bg-muted rounded-xl text-center text-xl font-bold text-foreground
+           focus:ring-2 focus:ring-primary focus:outline-none transition-all duration-200;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 py-2 px-4 text-muted-foreground 
+           transition-all duration-200;
+  }
+
+  .nav-item-active {
+    @apply text-primary;
+  }
+
+  .category-card {
+    @apply flex flex-col items-center gap-2 p-4 bg-card rounded-2xl shadow-sm
+           transition-all duration-200 active:scale-[0.97];
+  }
+
+  .product-card {
+    @apply bg-card rounded-2xl shadow-card overflow-hidden
+           transition-all duration-300 active:scale-[0.98];
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--background)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
