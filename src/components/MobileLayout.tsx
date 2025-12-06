@@ -21,7 +21,7 @@ const MobileLayout: React.FC<MobileLayoutProps> = ({
           className
         )}
         style={{ 
-          minWidth: '350px',
+          minWidth: '420px',
           minHeight: '932px',
           height: 'auto'
         }}

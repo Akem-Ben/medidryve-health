@@ -58,7 +58,7 @@ const LoginScreen: React.FC = () => {
             Welcome back
           </h1>
           <p className="text-muted-foreground mb-8 animate-slide-up stagger-1">
-            Log in to continue to MediDryve
+            Log in to continue to Zamda
           </p>
 
           <div className="space-y-5 animate-slide-up stagger-2">

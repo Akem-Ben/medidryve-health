@@ -69,7 +69,7 @@ const SplashScreen: React.FC = () => {
 
           {/* Brand name */}
           <h1 className="text-5xl font-bold text-primary-foreground tracking-tight mb-3">
-            MediDryve
+            Zamda
           </h1>
           <p className="text-primary-foreground/70 text-lg font-medium tracking-wide">
             Your Health, Our Priority
